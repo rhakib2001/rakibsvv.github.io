@@ -4,27 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rakib's Visual Verse</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    header { background:black; color:white; padding:20px; text-align:center; }
+    nav { background:#333; display:flex; justify-content:center; flex-wrap:wrap; }
+    nav a { color:white; padding:15px 20px; text-decoration:none; }
+    nav a:hover { background:#555; }
+    section { padding:40px; max-width:1200px; margin:auto; }
+    h2 { border-bottom:2px solid #ddd; padding-bottom:10px; margin-bottom:20px; }
+    .post { border:1px solid #ccc; margin-bottom:20px; padding:20px; border-radius:8px; }
+    .btn { background:#007BFF; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; margin-right:5px; }
+    .btn:hover { background:#0056b3; }
+    footer { background:#f4f4f4; text-align:center; padding:20px; margin-top:40px; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Rakib's Visual Verse</h1>
-    <p>Welcome to my Portfolio</p>
-  </header>
 
-  <section id="gallery">
-    <h2>My Photos</h2>
-    <div class="photo-grid">
-      <img src="images/photo1.jpg" alt="Photo 1">
-      <img src="images/photo2.jpg" alt="Photo 2">
-      <!-- Add more images here -->
-    </div>
-  </section>
+<header>
+  <h1>Rakib's Visual Verse</h1>
+  <p>Photography | Videos | Tours</p>
+</header>
 
-  <footer>
-    <p>Contact me: <a href="mailto:rhakib96@gmail.com">rhakib96@gmail.com</a></p>
-  </footer>
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Photos</a>
+  <a href="#">Videos</a>
+  <a href="#">Tour Guide</a>
+  <a href="#">About Me</a>
+  <a href="#">Contact</a>
+</nav>
+
+<section id="latest">
+  <h2>Latest</h2>
+  <div class="post">
+    <img src="latest-photo.jpg" alt="Latest work" width="100%">
+    <p>This is the latest work I uploaded.</p>
+    <button class="btn">👍 Like</button>
+    <button class="btn">💬 Comment</button>
+    <button class="btn">🛒 Buy Now</button>
+  </div>
+</section>
+
+<section id="popular">
+  <h2>Most Popular</h2>
+  <div class="post">
+    <img src="popular-photo.jpg" alt="Popular work" width="100%">
+    <p>This is one of my most popular works.</p>
+    <button class="btn">👍 Like</button>
+    <button class="btn">💬 Comment</button>
+    <button class="btn">🛒 Buy Now</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Rakib's Visual Verse</p>
+</footer>
+
 </body>
 </html>
-
-
