@@ -4,56 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rakib's Visual Verse</title>
-  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <img src="logo.jpg" alt="Rakib's Visual Verse Logo">
+  <img src="images/logo.jpg" alt="Rakib's Visual Verse Logo">
   <h1>Rakib's Visual Verse</h1>
-  <p>Photography | Videos | Tours</p>
+  <p>Photography | Videos | Travel Stories</p>
 </header>
 
 <nav>
-  <a href="#latest">Home</a>
-  <a href="#popular">Photos</a>
-  <a href="#popular">Videos</a>
+  <a href="#home">Home</a>
+  <a href="#latest">Latest Work</a>
+  <a href="#popular">Popular Work</a>
+  <a href="#travel">Travel Diaries</a>
   <a href="#about">About Me</a>
   <a href="#contact">Contact</a>
 </nav>
 
+<section id="home">
+  <h2>Welcome</h2>
+  <div class="hero">
+    <img src="images/hero.jpg" alt="Featured Travel" />
+    <p>Hi! I’m Rakib 👋. I love capturing moments through photography, videos, and traveling around the world.</p>
+  </div>
+</section>
+
 <section id="latest">
-  <h2>Latest</h2>
-  <div class="post">
-    <img src="latest-photo.jpg" alt="Latest work">
-    <p>This is the latest work I uploaded.</p>
-    <button class="btn">👍 Like</button>
-    <button class="btn">💬 Comment</button>
-    <button class="btn">🛒 Buy Now</button>
+  <h2>Latest Work</h2>
+  <div class="photo-grid">
+    <div class="post">
+      <img src="images/latest1.jpg" alt="Latest Photo 1">
+      <p>New photo from my recent trip.</p>
+      <button class="btn">👍 Like</button>
+      <button class="btn">💬 Comment</button>
+      <button class="btn">🛒 Buy Now</button>
+    </div>
+    <div class="post">
+      <img src="images/latest2.jpg" alt="Latest Photo 2">
+      <p>Captured this amazing view.</p>
+      <button class="btn">👍 Like</button>
+      <button class="btn">💬 Comment</button>
+      <button class="btn">🛒 Buy Now</button>
+    </div>
   </div>
 </section>
 
 <section id="popular">
   <h2>Most Popular</h2>
-  <div class="post">
-    <img src="popular-photo.jpg" alt="Popular work">
-    <p>This is one of my most popular works.</p>
-    <button class="btn">👍 Like</button>
-    <button class="btn">💬 Comment</button>
-    <button class="btn">🛒 Buy Now</button>
+  <div class="photo-grid">
+    <div class="post">
+      <img src="images/popular1.jpg" alt="Popular Photo">
+      <p>One of my most popular works.</p>
+      <button class="btn">👍 Like</button>
+      <button class="btn">💬 Comment</button>
+      <button class="btn">🛒 Buy Now</button>
+    </div>
+  </div>
+</section>
+
+<section id="travel">
+  <h2>Travel Diaries</h2>
+  <div class="travel-post">
+    <img src="images/travel1.jpg" alt="Travel 1">
+    <p>Visited the beautiful mountains of Switzerland. Amazing landscapes and peaceful moments!</p>
+  </div>
+  <div class="travel-post">
+    <img src="images/travel2.jpg" alt="Travel 2">
+    <p>Exploring the streets of Venice, capturing the charm of the canals.</p>
   </div>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>Hi, I’m Rakib 👋. A passionate photographer, storyteller, and traveler. 
-     I love capturing moments from streets, nature, and daily life. 
-     Through this site, I share my creative journey and connect with people who enjoy visual storytelling.</p>
+  <p>Hi, I’m Rakib 👋. A passionate photographer, videographer, and traveler. I share my journey with people who love visual storytelling.</p>
 </section>
 
 <section id="contact">
   <h2>Contact Me</h2>
-  <p>Want to collaborate, hire me, or buy my photos? Reach me here:</p>
+  <p>Want to collaborate, hire me, or buy my photos/videos? Reach me here:</p>
   <ul>
     <li>Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></li>
     <li>Instagram: <a href="https://instagram.com/rakibs_vv" target="_blank">@rakibs_vv</a></li>
@@ -66,7 +96,7 @@
 </footer>
 
 <script>
-  // Optional: interactive button alerts
+  // Button interactivity
   const buttons = document.querySelectorAll('.btn');
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
