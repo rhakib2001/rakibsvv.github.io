@@ -4,41 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rakib's Visual Verse</title>
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; }
-    header { background:black; color:white; padding:20px; text-align:center; }
-    nav { background:#333; display:flex; justify-content:center; flex-wrap:wrap; }
-    nav a { color:white; padding:15px 20px; text-decoration:none; }
-    nav a:hover { background:#555; }
-    section { padding:40px; max-width:1200px; margin:auto; }
-    h2 { border-bottom:2px solid #ddd; padding-bottom:10px; margin-bottom:20px; }
-    .post { border:1px solid #ccc; margin-bottom:20px; padding:20px; border-radius:8px; }
-    .btn { background:#007BFF; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; margin-right:5px; }
-    .btn:hover { background:#0056b3; }
-    footer { background:#f4f4f4; text-align:center; padding:20px; margin-top:40px; }
-  </style>
+  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
 <header>
-  <img src="logo.jpg" alt="Rakib's Visual Verse Logo" style="height:80px;">
+  <img src="logo.jpg" alt="Rakib's Visual Verse Logo">
   <h1>Rakib's Visual Verse</h1>
   <p>Photography | Videos | Tours</p>
 </header>
 
 <nav>
-  <a href="#">Home</a>
-  <a href="#">Photos</a>
-  <a href="#">Videos</a>
-  <a href="#">Tour Guide</a>
-  <a href="#">About Me</a>
-  <a href="#">Contact</a>
+  <a href="#latest">Home</a>
+  <a href="#popular">Photos</a>
+  <a href="#popular">Videos</a>
+  <a href="#about">About Me</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="latest">
   <h2>Latest</h2>
   <div class="post">
-    <img src="latest-photo.jpg" alt="Latest work" width="100%">
+    <img src="latest-photo.jpg" alt="Latest work">
     <p>This is the latest work I uploaded.</p>
     <button class="btn">👍 Like</button>
     <button class="btn">💬 Comment</button>
@@ -49,19 +36,21 @@
 <section id="popular">
   <h2>Most Popular</h2>
   <div class="post">
-    <img src="popular-photo.jpg" alt="Popular work" width="100%">
+    <img src="popular-photo.jpg" alt="Popular work">
     <p>This is one of my most popular works.</p>
     <button class="btn">👍 Like</button>
     <button class="btn">💬 Comment</button>
     <button class="btn">🛒 Buy Now</button>
   </div>
 </section>
-  <section id="about">
+
+<section id="about">
   <h2>About Me</h2>
   <p>Hi, I’m Rakib 👋. A passionate photographer, storyteller, and traveler. 
      I love capturing moments from streets, nature, and daily life. 
      Through this site, I share my creative journey and connect with people who enjoy visual storytelling.</p>
 </section>
+
 <section id="contact">
   <h2>Contact Me</h2>
   <p>Want to collaborate, hire me, or buy my photos? Reach me here:</p>
@@ -72,12 +61,19 @@
   </ul>
 </section>
 
-
 <footer>
   <p>© 2025 Rakib's Visual Verse</p>
 </footer>
 
+<script>
+  // Optional: interactive button alerts
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      alert(`You clicked ${btn.textContent}`);
+    });
+  });
+</script>
+
 </body>
 </html>
-
-
