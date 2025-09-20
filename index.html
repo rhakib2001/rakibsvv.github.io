@@ -1,109 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rakib's Visual Verse</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakib's Visual Verse</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-900 text-gray-200;
+        }
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 4px;
+        }
+    </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
-<header>
-  <img src="images/logo.jpg" alt="Rakib's Visual Verse Logo">
-  <h1>Rakib's Visual Verse</h1>
-  <p>Photography | Videos | Travel Stories</p>
-</header>
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 bg-gray-900/80 backdrop-blur-md z-50 shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white transition-colors hover:text-indigo-400">Rakib's Visual Verse</a>
+            <div class="hidden md:flex space-x-6 lg:space-x-10 font-medium">
+                <a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="#photos" class="text-gray-300 hover:text-white transition-colors">Photos</a>
+                <a href="#videos" class="text-gray-300 hover:text-white transition-colors">Videos</a>
+                <a href="#tour-guide" class="text-gray-300 hover:text-white transition-colors">Tour Guide</a>
+                <a href="#store" class="text-gray-300 hover:text-white transition-colors">Store</a>
+                <a href="#about-me" class="text-gray-300 hover:text-white transition-colors">About Me</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
+                <a href="#photos" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Photos</a>
+                <a href="#videos" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Videos</a>
+                <a href="#tour-guide" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Tour Guide</a>
+                <a href="#store" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Store</a>
+                <a href="#about-me" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About Me</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </header>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#latest">Latest Work</a>
-  <a href="#popular">Popular Work</a>
-  <a href="#travel">Travel Diaries</a>
-  <a href="#about">About Me</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <main class="flex-grow">
+        <!-- --- -->
+        <!-- Home Section -->
+        <section id="home" class="py-16 sm:py-24 lg:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Welcome to <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">Rakib's Visual Verse</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Your destination for stunning photography, captivating videography, and inspiring travel stories.
+                </p>
 
-<section id="home">
-  <h2>Welcome</h2>
-  <div class="hero">
-    <img src="images/hero.jpg" alt="Featured Travel" />
-    <p>Hi! I’m Rakib 👋. I love capturing moments through photography, videos, and traveling around the world.</p>
-  </div>
-</section>
+                <!-- Latest Content Preview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 group relative">
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Latest+Photo" alt="Latest Photo" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-white font-bold text-lg">Latest Photo</span>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 group relative">
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Latest+Video" alt="Latest Video" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-white font-bold text-lg">Latest Video</span>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 group relative">
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Latest+Story" alt="Latest Story" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-white font-bold text-lg">Latest Story</span>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 group relative">
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Latest+Asset" alt="Latest Digital Asset" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-white font-bold text-lg">Latest Asset</span>
+                        </div>
+                    </div>
+                </div>
 
-<section id="latest">
-  <h2>Latest Work</h2>
-  <div class="photo-grid">
-    <div class="post">
-      <img src="images/latest1.jpg" alt="Latest Photo 1">
-      <p>New photo from my recent trip.</p>
-      <button class="btn">👍 Like</button>
-      <button class="btn">💬 Comment</button>
-      <button class="btn">🛒 Buy Now</button>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#photos" class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors shadow-lg">View All Photos</a>
+                    <a href="#store" class="px-6 py-3 border border-gray-600 text-gray-300 font-medium rounded-full hover:bg-gray-800 transition-colors">Visit Digital Store</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- --- -->
+        <!-- Photos Section -->
+        <section id="photos" class="py-16 sm:py-24 lg:py-32 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-12">Photos</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Photo Item -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Photo+1" alt="Photo 1" class="w-full h-auto object-cover">
+                        <div class="p-4 flex justify-between items-center space-x-2">
+                            <button class="action-btn px-4 py-2 bg-gray-700 text-white font-medium rounded-full hover:bg-gray-600 transition-colors" data-action="comment" data-item="Photo 1">Comment</button>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="buy" data-item="Photo 1">Buy</button>
+                        </div>
+                    </div>
+                    <!-- Photo Item -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Photo+2" alt="Photo 2" class="w-full h-auto object-cover">
+                        <div class="p-4 flex justify-between items-center space-x-2">
+                            <button class="action-btn px-4 py-2 bg-gray-700 text-white font-medium rounded-full hover:bg-gray-600 transition-colors" data-action="comment" data-item="Photo 2">Comment</button>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="buy" data-item="Photo 2">Buy</button>
+                        </div>
+                    </div>
+                     <!-- Photo Item -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Photo+3" alt="Photo 3" class="w-full h-auto object-cover">
+                        <div class="p-4 flex justify-between items-center space-x-2">
+                            <button class="action-btn px-4 py-2 bg-gray-700 text-white font-medium rounded-full hover:bg-gray-600 transition-colors" data-action="comment" data-item="Photo 3">Comment</button>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="buy" data-item="Photo 3">Buy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- -->
+        <!-- Videos Section -->
+        <section id="videos" class="py-16 sm:py-24 lg:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-12">Videos</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <!-- Video Item -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1f2937/94a3b8?text=Video+1" alt="Video 1" class="w-full h-auto object-cover">
+                        <div class="p-4 flex justify-between items-center space-x-2">
+                            <button class="action-btn px-4 py-2 bg-gray-700 text-white font-medium rounded-full hover:bg-gray-600 transition-colors" data-action="comment" data-item="Video 1">Comment</button>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="buy" data-item="Video 1">Buy</button>
+                        </div>
+                    </div>
+                    <!-- Video Item -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1f2937/94a3b8?text=Video+2" alt="Video 2" class="w-full h-auto object-cover">
+                        <div class="p-4 flex justify-between items-center space-x-2">
+                            <button class="action-btn px-4 py-2 bg-gray-700 text-white font-medium rounded-full hover:bg-gray-600 transition-colors" data-action="comment" data-item="Video 2">Comment</button>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="buy" data-item="Video 2">Buy</button>
+                        </div>
+                    </div>
+                    <!-- Video Item -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1f2937/94a3b8?text=Video+3" alt="Video 3" class="w-full h-auto object-cover">
+                        <div class="p-4 flex justify-between items-center space-x-2">
+                            <button class="action-btn px-4 py-2 bg-gray-700 text-white font-medium rounded-full hover:bg-gray-600 transition-colors" data-action="comment" data-item="Video 3">Comment</button>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="buy" data-item="Video 3">Buy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- -->
+        <!-- Tour Guide Section -->
+        <section id="tour-guide" class="py-16 sm:py-24 lg:py-32 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-12">Tour Guide</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tour Guide Story Card -->
+                    <div class="bg-gray-900 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/0f172a/64748b?text=Story+1" alt="Tour Story 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">My Trip to the Himalayas</h3>
+                            <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                            </p>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="ask" data-item="Himalayas Tour Guide Story">Ask Me More</button>
+                        </div>
+                    </div>
+                    <!-- Tour Guide Story Card -->
+                    <div class="bg-gray-900 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/0f172a/64748b?text=Story+2" alt="Tour Story 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Exploring the Amazon</h3>
+                            <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                                Vivamus a ante vitae mauris eleifend cursus. Nam quis nulla. Integer malesuada. In in enim a arcu.
+                            </p>
+                            <button class="action-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors" data-action="ask" data-item="Amazon Tour Guide Story">Ask Me More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- -->
+        <!-- Store Section -->
+        <section id="store" class="py-16 sm:py-24 lg:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-12">Digital Assets Store</h2>
+                
+                <!-- Pictures Category -->
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">Pictures</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Store Item 1 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1f2937/64748b?text=Forest+Path" alt="Forest Path" class="w-full h-48 object-cover">
+                        <div class="p-6 text-center">
+                            <h4 class="text-xl font-bold text-white mb-2">Forest Path</h4>
+                            <span class="text-2xl font-bold text-indigo-400 mb-4 block">$25.00</span>
+                            <button class="action-btn px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors shadow-lg" data-action="buy" data-item="Forest Path - Store">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Store Item 2 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1f2937/64748b?text=Desert+Oasis" alt="Desert Oasis" class="w-full h-48 object-cover">
+                        <div class="p-6 text-center">
+                            <h4 class="text-xl font-bold text-white mb-2">Desert Oasis</h4>
+                            <span class="text-2xl font-bold text-indigo-400 mb-4 block">$20.00</span>
+                            <button class="action-btn px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors shadow-lg" data-action="buy" data-item="Desert Oasis - Store">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Videos Category -->
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">Videos</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <!-- Store Item 3 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1f2937/64748b?text=City+Timelapse" alt="City Timelapse" class="w-full h-48 object-cover">
+                        <div class="p-6 text-center">
+                            <h4 class="text-xl font-bold text-white mb-2">City Timelapse</h4>
+                            <span class="text-2xl font-bold text-indigo-400 mb-4 block">$50.00</span>
+                            <button class="action-btn px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors shadow-lg" data-action="buy" data-item="City Timelapse - Store">Buy Now</button>
+                        </div>
+                    </div>
+                     <!-- Store Item 4 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1f2937/64748b?text=Drone+Shot" alt="Drone Shot" class="w-full h-48 object-cover">
+                        <div class="p-6 text-center">
+                            <h4 class="text-xl font-bold text-white mb-2">Drone Shot</h4>
+                            <span class="text-2xl font-bold text-indigo-400 mb-4 block">$75.00</span>
+                            <button class="action-btn px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors shadow-lg" data-action="buy" data-item="Drone Shot - Store">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- -->
+        <!-- About Me Section -->
+        <section id="about-me" class="py-16 sm:py-24 lg:py-32 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="https://placehold.co/300x300/1e293b/94a3b8?text=Your+Photo" alt="Your Photo" class="w-48 h-48 rounded-full object-cover shadow-xl flex-shrink-0 border-4 border-indigo-500">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">About Me</h2>
+                        <p class="text-lg text-gray-400 mb-4">
+                            Hi there! I'm Rakib, and I'm a passionate photographer, videographer, and a dedicated traveler. My journey began with a love for exploring new places, which quickly evolved into a passion for capturing the unique moments and breathtaking landscapes I encountered.
+                        </p>
+                        <p class="text-lg text-gray-400">
+                            Through my lens, I strive to tell stories and share the beauty of the world. My work is a blend of visual art and personal experience, and I hope it inspires you to see the world from a different perspective. Feel free to explore my galleries and travel stories, and don't hesitate to reach out!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- -->
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-24 lg:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Contact Me</h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Feel free to reach out for collaborations, custom projects, or any questions you may have.
+                    </p>
+                    <!-- Contact Information -->
+                    <div class="flex justify-center space-x-6 mb-8 text-indigo-400 text-lg">
+                        <a href="mailto:rhakib96@gmail.com" class="hover:text-white transition-colors">
+                            <i class="fa-solid fa-envelope mr-2"></i>rhakib96@gmail.com
+                        </a>
+                    </div>
+                    <!-- Contact Form -->
+                    <form class="flex flex-col space-y-4" id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" class="px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input type="email" name="email" placeholder="Your Email" class="px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <textarea name="message" placeholder="Your Message" rows="5" class="px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                        <button type="submit" class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-500 transition-colors shadow-lg">Send Message</button>
+                    </form>
+                    <div id="form-message" class="mt-4 text-center hidden"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4 text-2xl">
+                <!-- Social Media Icons -->
+                <a href="https://www.facebook.com/profile.php?id=61561606845308" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/rhakib2001/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@monju2001" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; <span id="current-year"></span> Rakib's Visual Verse. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Email Modal/Message Box -->
+    <div id="email-modal" class="hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 z-50">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-xl max-w-sm mx-4 text-center">
+            <h3 id="modal-title" class="text-xl font-bold text-white mb-4"></h3>
+            <p id="modal-text" class="text-gray-300 mb-4"></p>
+            <button id="modal-action-btn" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-500 transition-colors">Open Email Client</button>
+            <button id="modal-close-btn" class="w-full mt-2 px-4 py-2 bg-gray-700 text-white rounded-md font-medium hover:bg-gray-600 transition-colors">Cancel</button>
+        </div>
     </div>
-    <div class="post">
-      <img src="images/latest2.jpg" alt="Latest Photo 2">
-      <p>Captured this amazing view.</p>
-      <button class="btn">👍 Like</button>
-      <button class="btn">💬 Comment</button>
-      <button class="btn">🛒 Buy Now</button>
-    </div>
-  </div>
-</section>
+    
+    <script>
+        // Set up email details
+        const emailAddress = 'rhakib96@gmail.com';
 
-<section id="popular">
-  <h2>Most Popular</h2>
-  <div class="photo-grid">
-    <div class="post">
-      <img src="images/popular1.jpg" alt="Popular Photo">
-      <p>One of my most popular works.</p>
-      <button class="btn">👍 Like</button>
-      <button class="btn">💬 Comment</button>
-      <button class="btn">🛒 Buy Now</button>
-    </div>
-  </div>
-</section>
+        // Get elements for the custom email modal
+        const emailModal = document.getElementById('email-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalActionBtn = document.getElementById('modal-action-btn');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
 
-<section id="travel">
-  <h2>Travel Diaries</h2>
-  <div class="travel-post">
-    <img src="images/travel1.jpg" alt="Travel 1">
-    <p>Visited the beautiful mountains of Switzerland. Amazing landscapes and peaceful moments!</p>
-  </div>
-  <div class="travel-post">
-    <img src="images/travel2.jpg" alt="Travel 2">
-    <p>Exploring the streets of Venice, capturing the charm of the canals.</p>
-  </div>
-</section>
+        // Handle button clicks for comments, buy, and ask me more
+        document.querySelectorAll('.action-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const action = button.dataset.action;
+                const item = button.dataset.item;
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hi, I’m Rakib 👋. A passionate photographer, videographer, and traveler. I share my journey with people who love visual storytelling.</p>
-</section>
+                let subject = '';
+                let body = '';
+                let title = '';
+                let text = '';
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p>Want to collaborate, hire me, or buy my photos/videos? Reach me here:</p>
-  <ul>
-    <li>Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></li>
-    <li>Instagram: <a href="https://instagram.com/rakibs_vv" target="_blank">@rakibs_vv</a></li>
-    <li>Facebook: <a href="https://facebook.com/rakibs.visual.verse" target="_blank">Rakib’s Visual Verse</a></li>
-  </ul>
-</section>
+                switch (action) {
+                    case 'comment':
+                        subject = `Comment on ${item}`;
+                        body = `Hi Rakib, I have a comment about your work.\n\nRegarding: ${item}\n\nComment: `;
+                        title = 'Leave a Comment';
+                        text = 'An email draft has been prepared for you to leave a comment. Your email client will now open.';
+                        break;
+                    case 'buy':
+                        subject = `Purchase Inquiry for ${item}`;
+                        body = `Hi Rakib, I'm interested in purchasing your digital asset.\n\nRegarding: ${item}\n\nPlease let me know the process to buy.`;
+                        title = 'Purchase Inquiry';
+                        text = 'An email draft has been prepared for your purchase inquiry. Your email client will now open.';
+                        break;
+                    case 'ask':
+                        subject = `Question about ${item}`;
+                        body = `Hi Rakib, I have a question about your travel story.\n\nRegarding: ${item}\n\nQuestion: `;
+                        title = 'Ask a Question';
+                        text = 'An email draft has been prepared for your question. Your email client will now open.';
+                        break;
+                }
 
-<footer>
-  <p>© 2025 Rakib's Visual Verse</p>
-</footer>
+                modalTitle.textContent = title;
+                modalText.textContent = text;
+                emailModal.classList.remove('hidden');
 
-<script>
-  // Button interactivity
-  const buttons = document.querySelectorAll('.btn');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      alert(`You clicked ${btn.textContent}`);
-    });
-  });
-</script>
+                // Set up the action button to open the mailto link
+                modalActionBtn.onclick = () => {
+                    window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    emailModal.classList.add('hidden');
+                };
+            });
+        });
 
+        // Close modal
+        modalCloseBtn.addEventListener('click', () => {
+            emailModal.classList.add('hidden');
+        });
+
+        // Other existing functionalities
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Handle contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.name.value;
+            const email = this.email.value;
+            const message = this.message.value;
+            const subject = encodeURIComponent(`Message from website contact form`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+            window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+
+            formMessage.textContent = 'A mail draft has been opened. Thank you for your message!';
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('text-green-400');
+            contactForm.reset();
+        });
+    </script>
 </body>
 </html>
